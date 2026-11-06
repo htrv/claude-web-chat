@@ -62,3 +62,9 @@ claude-web-chat/
 ```
 
 Шаблоны systemd (`claude-web-chat-*.service`) используют пути `/opt/claude-web-chat`. Подставьте свои.
+
+## Благодарность
+
+Если проект пригодился, можно отправить биткоин сюда:
+
+`bc1q8dtk9sar0862ckav0hacmvllwkhy00rvzn6puv`
