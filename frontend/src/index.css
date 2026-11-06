@@ -1,0 +1,184 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  overflow: hidden;
+}
+
+.markdown-body {
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.markdown-body p { margin-bottom: 0.5em; }
+.markdown-body p:last-child { margin-bottom: 0; }
+.markdown-body pre {
+  border-radius: 8px;
+  overflow-x: auto;
+}
+
+.code-block-wrapper {
+  position: relative;
+  margin: 0.75em 0;
+}
+
+.code-block-wrapper pre {
+  margin: 0;
+}
+
+.copy-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  padding: 3px 10px;
+  font-size: 0.72rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.65);
+  transition: background 0.15s, color 0.15s;
+  z-index: 1;
+}
+
+.copy-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+  color: #fff;
+}
+.markdown-body code:not(pre code) {
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+  font-size: 0.875em;
+  background: rgba(128, 128, 128, 0.15);
+}
+.markdown-body ul, .markdown-body ol {
+  padding-left: 1.5em;
+  margin: 0.5em 0;
+}
+.markdown-body blockquote {
+  border-left: 3px solid #7c3aed;
+  padding-left: 1em;
+  opacity: 0.8;
+  margin: 0.5em 0;
+}
+.markdown-body .table-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 0.5em 0;
+}
+.markdown-body table {
+  border-collapse: collapse;
+  min-width: 100%;
+  margin: 0;
+}
+.markdown-body th, .markdown-body td {
+  border: 1px solid rgba(128,128,128,0.3);
+  padding: 0.4em 0.8em;
+  white-space: nowrap;
+}
+.markdown-body h1, .markdown-body h2, .markdown-body h3 {
+  margin: 0.75em 0 0.4em;
+}
+
+.thinking-block {
+  margin-bottom: 0.75em;
+  padding: 0.5em 0.75em;
+  border-left: 2px solid rgba(128, 128, 128, 0.35);
+  border-radius: 2px;
+  opacity: 0.6;
+}
+.thinking-toggle {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: rgba(128, 128, 128, 0.8);
+  margin-bottom: 0.2em;
+  transition: color 0.15s;
+}
+.thinking-toggle:hover {
+  color: rgba(128, 128, 128, 1);
+}
+.thinking-text {
+  font-size: 0.82rem;
+  font-family: inherit;
+  white-space: pre-wrap;
+  word-break: break-word;
+  color: rgba(128, 128, 128, 0.85);
+  margin: 0;
+  line-height: 1.6;
+}
+
+.typing-cursor::after {
+  content: "▊";
+  animation: blink 0.8s step-end infinite;
+}
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+/* Sidebar — pulsing dot for background processing chats */
+.chat-processing-dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--mantine-color-violet-5);
+  animation: chat-dot-pulse 1.4s ease-in-out infinite;
+}
+@keyframes chat-dot-pulse {
+  0%, 100% { opacity: 0.3; transform: scale(0.85); }
+  50% { opacity: 1; transform: scale(1.15); }
+}
+
+/* Thinking indicator — три прыгающие точки */
+.thinking-dots {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 2px 0;
+}
+.thinking-dots span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.4;
+  animation: thinking-bounce 1.2s ease-in-out infinite;
+}
+.thinking-dots span:nth-child(2) { animation-delay: 0.2s; }
+.thinking-dots span:nth-child(3) { animation-delay: 0.4s; }
+@keyframes thinking-bounce {
+  0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
+  30% { transform: translateY(-6px); opacity: 1; }
+}
+
+.download-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 8px;
+  background: var(--mantine-color-violet-6);
+  color: #fff !important;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration: none !important;
+  transition: background 0.15s;
+}
+.download-btn:hover {
+  background: var(--mantine-color-violet-7);
+}

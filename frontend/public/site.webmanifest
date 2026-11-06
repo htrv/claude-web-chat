@@ -1,0 +1,14 @@
+{
+  "name": "Claude Web Chat",
+  "short_name": "Claude Chat",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ],
+  "theme_color": "#E8855A",
+  "background_color": "#0f0f0f",
+  "display": "standalone"
+}

@@ -1,0 +1,35 @@
+# Secrets
+.env
+.env.*
+!.env.example
+nginx/ssl/
+*.pem
+*.key
+*credentials*.json
+
+# Python
+backend/.venv/
+backend/__pycache__/
+backend/routers/__pycache__/
+**/__pycache__/
+*.pyc
+*.pyo
+
+# Node
+frontend/node_modules/
+frontend/dist/
+e2e/node_modules/
+e2e/report/
+e2e/test-results/
+
+# Uploads and local data
+uploads/
+**/uploads/
+**/downloads/
+*.bak
+*.sqlite
+*.sqlite3
+
+# OS
+.DS_Store
+tests/node_modules/

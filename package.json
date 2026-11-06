@@ -1,0 +1,8 @@
+{
+  "name": "claude-web-chat-repo",
+  "private": true,
+  "scripts": {
+    "test": "npm --prefix frontend run test",
+    "test:e2e": "npm --prefix e2e run test"
+  }
+}

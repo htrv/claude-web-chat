@@ -1,0 +1,15 @@
+[Unit]
+Description=Claude Web Chat Docker (postgres + nginx)
+After=docker.service network-online.target
+Requires=docker.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+WorkingDirectory=/opt/claude-web-chat
+ExecStart=/usr/bin/docker compose up -d postgres nginx
+ExecStop=/usr/bin/docker compose down
+TimeoutStartSec=120
+
+[Install]
+WantedBy=multi-user.target

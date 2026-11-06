@@ -1,0 +1,18 @@
+[Unit]
+Description=Claude Web Chat Backend
+After=network.target docker.service
+Requires=docker.service
+
+[Service]
+Type=simple
+User=claudeweb
+WorkingDirectory=/opt/claude-web-chat/backend
+EnvironmentFile=/opt/claude-web-chat/.env
+ExecStart=/opt/claude-web-chat/backend/.venv/bin/uvicorn main:app --host 127.0.0.1 --port 4001 --workers 1
+Restart=always
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
